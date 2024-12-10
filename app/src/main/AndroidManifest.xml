@@ -13,6 +13,12 @@
         android:theme="@style/Theme.SocialMedia"
         tools:targetApi="31">
         <activity
+            android:name=".Page5"
+            android:exported="false" />
+        <activity
+            android:name=".Page4"
+            android:exported="false" />
+        <activity
             android:name=".Page3"
             android:exported="false" />
         <activity
