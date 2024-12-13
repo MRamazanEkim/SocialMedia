@@ -1,6 +1,8 @@
 package com.example.socialmedia
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +28,16 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+        }
+
+        setContentView(R.layout.activity_main)
+
+        // Initialize the button and set an onClickListener
+        val btnPageOne = findViewById<Button>(R.id.button8)
+        btnPageOne.setOnClickListener {
+            // Navigate to MainActivity2
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
         }
     }
 }

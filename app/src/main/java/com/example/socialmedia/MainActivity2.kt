@@ -1,22 +1,28 @@
 package com.example.socialmedia
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.widget.Button
+import androidx.activity.ComponentActivity
 
-class MainActivity2 : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        setContentView(R.layout.activity_page2) // Set layout for MainActivity2
+
+        // Button to navigate to Page2
+        val button1 = findViewById<Button>(R.id.button1)
+        button1.setOnClickListener {
+            // Navigate to Page2
+            val intent = Intent(this, Page2::class.java)
+            startActivity(intent)
+        }
+
+        // Button to navigate back to MainActivity
+        val button7 = findViewById<Button>(R.id.button7)
+        button7.setOnClickListener {
+            // Finish MainActivity2 to return to MainActivity
+            finish()
         }
     }
 }
